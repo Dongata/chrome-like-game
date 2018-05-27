@@ -41,7 +41,14 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
+    <Compile Include="CollisonHandler.cs" />
+    <Compile Include="GameConfig.cs" />
+    <Compile Include="Player\Cactus.cs" />
+    <Compile Include="Player\Dinosaur.cs" />
+    <Compile Include="Player\DinosaurSprite.cs" />
+    <Compile Include="Player\Floor.cs" />
+    <Compile Include="Player\MyRectangle.cs" />
+    <Compile Include="try2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
