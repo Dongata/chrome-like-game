@@ -1,16 +1,20 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 
 namespace try2_Game.Player
 {
-    class Cactus : MyRectangle
+    class Bird : MyRectangle
     {
-        private bool reset = false;
-        private int timeout = 0;
         private Random seeder;
+        private int timeout;
+        private bool reset;
 
-        public Cactus(GraphicsDevice graphicsDevice, int timeout = 0) : base(graphicsDevice, Color.Green, 20, 100)
+        public Bird(GraphicsDevice graphicsDevice, int timeout = 0) : base(graphicsDevice, Color.Lavender, 40, 10)
         {
             pos = InitialPosition();
             seeder = new Random();
@@ -41,11 +45,11 @@ namespace try2_Game.Player
 
             if (!reset)
             {
-                pos.X = pos.X - SpeedX;
+                pos.X = pos.X - SpeedX; 
             }
         }
 
-        private Vector2 InitialPosition() => 
-            new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height / 2);
+        private Vector2 InitialPosition() =>
+            new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height / 2 + 50);
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CollisonHandler.cs" />
     <Compile Include="GameConfig.cs" />
+    <Compile Include="Player\Bird.cs" />
     <Compile Include="Player\Cactus.cs" />
     <Compile Include="Player\Dinosaur.cs" />
     <Compile Include="Player\DinosaurSprite.cs" />

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using try2_Game.Player;
 
@@ -16,6 +17,8 @@ namespace try2_Game
         Dinosaur dinosaur;
         Floor floor;
         Cactus cactus;
+        Cactus cactus2;
+        private Bird bird;
         CollisonHandler collisonHandler;
         SpriteFont gameOverText;
 
@@ -54,7 +57,9 @@ namespace try2_Game
             dinosaur = new Dinosaur(GraphicsDevice);
             floor = new Floor(GraphicsDevice);
             cactus = new Cactus(GraphicsDevice);
-            collisonHandler = new CollisonHandler(dinosaur, new List<MyRectangle>() { cactus });
+            cactus2 = new Cactus(GraphicsDevice, 300);
+            bird = new Bird(GraphicsDevice, 5000);
+            collisonHandler = new CollisonHandler(dinosaur, new List<MyRectangle>() { cactus, cactus2 });
             gameOverText = Content.Load<SpriteFont>("GameOverFont");
         }
 
@@ -93,8 +98,13 @@ namespace try2_Game
                 dinosaur.HandleKeyboard(Keyboard.GetState());
 
                 cactus.SpeedX = GameConfig.WorldStatics.GameSpeed;
+                cactus2.SpeedX = GameConfig.WorldStatics.GameSpeed;
+                bird.SpeedX = GameConfig.WorldStatics.GameSpeed;
                 cactus.Update();
+                cactus2.Update();
                 dinosaur.Update();
+                bird.Update();
+                Console.WriteLine(cactus2.Pos.X);
 
                 if (((int)gameTime.TotalGameTime.TotalSeconds) % 10 == 0)
                 {
@@ -122,6 +132,8 @@ namespace try2_Game
                 floor.DrawMe(spriteBatch);
                 dinosaur.DrawMe(spriteBatch);
                 cactus.DrawMe(spriteBatch);
+                cactus2.DrawMe(spriteBatch);
+                bird.DrawMe(spriteBatch);
             }
             else
             {

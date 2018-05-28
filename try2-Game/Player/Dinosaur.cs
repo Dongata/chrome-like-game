@@ -74,7 +74,7 @@ namespace try2_Game.Player
             {
                 if (!isJumping)
                 {
-                    SpeedY = 15;
+                    SpeedY = 20;
                     isJumping = true;
                 }
             }

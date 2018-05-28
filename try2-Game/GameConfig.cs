@@ -5,7 +5,7 @@
         public static class WorldStatics
         {
             private static float gameSpeed = 2;
-            private static float gravity = 0.5f;
+            private static float gravity = 0.8f;
 
             public static float GameSpeed => gameSpeed;
             public static float Gravity => gravity;
