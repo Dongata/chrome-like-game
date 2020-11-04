@@ -2,7 +2,6 @@
 
 namespace try2_Game
 {
-#if WINDOWS || LINUX
     /// <summary>
     /// The main class.
     /// </summary>
@@ -18,5 +17,4 @@ namespace try2_Game
                 game.Run();
         }
     }
-#endif
 }
